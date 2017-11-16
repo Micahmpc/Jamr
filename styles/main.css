@@ -3,28 +3,49 @@ html {
      height: 100%; /* makes sure our HTML takes up 100% of the browser window */
      font-size: 100%;
  }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> checkpoint-6-html-css
  body {
      font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
      color: white;             /* sets the text color to white */
      min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
  }
+<<<<<<< HEAD
 
  body.landing {
      background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
  }
 
+=======
+ 
+ body.landing {
+     background-color: rgb(58,23,63); /* sets the background color to an RGB value (see below) */
+ }
+ 
+>>>>>>> checkpoint-6-html-css
  .navbar {
      padding: 0.5rem;
      background-color: rgb(101,18,95);
  }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> checkpoint-6-html-css
  .navbar .logo {
      position: relative; /* positioning will be explained in a resource */
      left: 2rem;
  }
+<<<<<<< HEAD
 
 
+=======
+ 
+ 
+>>>>>>> checkpoint-6-html-css
  /* HOMEPAGE */
  .hero-content {
      position: relative; /* positioning will be explained in a resource */
@@ -34,7 +55,11 @@ html {
      background-position: center center;
      background-size: cover;
  }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> checkpoint-6-html-css
  .hero-content .hero-title {
      position: absolute;             /* positioning will be explained in a resource */
      top: 40%;                       /* positioning will be explained in a resource */
@@ -50,7 +75,11 @@ html {
      letter-spacing: 0.5rem;         /* puts 0.5 root ems worth of space between each letter */
      text-shadow: 1px 1px 0px rgb(58,23,63); /* creates a shadow underneath the text for readability over the image */
  }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> checkpoint-6-html-css
  .selling-points {
      position: relative;
      display: table;
@@ -59,7 +88,11 @@ html {
      -moz-box-sizing: border-box;
      box-sizing: border-box; /* we'll explain this in a resource */
  }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> checkpoint-6-html-css
  .point {
      display: table-cell;
      position: relative;
@@ -67,17 +100,26 @@ html {
      padding: 2rem;
      text-align: center;
  }
+<<<<<<< HEAD
 
  .point .point-title {
      font-size: 1.25rem;
  }
 
+=======
+ 
+ .point .point-title {
+     font-size: 1.25rem;
+ }
+ 
+>>>>>>> checkpoint-6-html-css
  .ion-music-note,
  .ion-radio-waves,
  .ion-iphone {
      color: rgb(233,50,117);
      font-size: 5rem;
  }
+<<<<<<< HEAD
 
  .clearfix::after {
    content: ".";
@@ -85,3 +127,13 @@ html {
    display: block;
    height: 0;
    clear: both;
+=======
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+>>>>>>> checkpoint-6-html-css

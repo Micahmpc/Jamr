@@ -43,20 +43,39 @@ body.album {
  }
 
  .album-view-song-item {
-     height: 3rem;
-     border-bottom: 1px solid rgba(255,255,255,0.5);
+     height: 2rem;
+     border-bottom: 1px solid rgba(255,255,255,0.2);
+     text-align: left;
  }
 
  .song-item-number {
-     width: 5%;
+     width: 10%;
+     color: #bbbbbb;
  }
 
  .song-item-title {
-     width: 85%;
+     width: 65%;
+     font-weight: 400;
+     color: white;
  }
 
  .song-item-duration {
-     width: 5%;
+     width: 10%;
+     color: #bbbbbb;
+ }
+
+ .song-item-played {
+   width: 10%;
+   color: #bbbbbb;
+ }
+
+ thead .song-item-title {
+     width: 65%;
+     font-weight: 700;
+ }
+
+ thead .song-item-title, thead .song-item-number, thead .song-item-duration, thead .song-item-played {
+   color: rgb(233,50,117);
  }
 
  @media (max-width: 640px) and (min-width: 320px) {

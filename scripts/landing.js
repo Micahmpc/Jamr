@@ -1,44 +1,29 @@
-   // var animatePoints = function () {
-   //   var points = document.getElementsByClassName('point');
-   //
-   //   for (var i=0; i < points.length; i++) {
-   //     points[i].style.opacity = 1;
-   //     points[i].style.transform = "scaleX(1) translateY(0)";
-   //     points[i].style.msTransform = "scaleX(1) translateY(0)";
-   //     points[i].style.WebkitTransform = "scaleX(1) translateY(0)";
-   //   }
-   // }
-   // animatePoints();
-
-
-   // What is the difference other than how I got here? is one better than the other?
-
-
-var pointsArray = document.getElementsByClassName('point');
-
-var revealPoint = function(point) {
-  point.style.opacity = 1;
-  point.style.transform = "scaleX(1) translateY(0)";
-  point.style.msTransform = "scaleX(1) translateY(0)";
-  point.style.WebkitTransform = "scaleX(1) translateY(0)";
-}
-
-  var animatePoints = function (points) {
-      forEach(points, revealPoint);
+  var animatePoints = function() {
+    var revealPoint = function() {
+       // #7
+       $(this).css({
+           opacity: 1,
+           transform: 'scaleX(1) translateY(0)'
+       });
    };
 
-  window.onload = function() {
+   $.each($('.point'), revealPoint)
+
+ };
+
+
+  $(window).load(function() {
     // Automatically animate the points on a tall screen where scrolling can't trigger the animation
-     if (window.innerHeight > 950) {
+     if ($(window).height() > 950) {
          animatePoints(pointsArray);
      }
 
-    var sellingPoints = document.getElementsByClassName('selling-points')[0];
-    var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
+    var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
 
-    window.addEventListener('scroll', function(event) {
-      if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-          animatePoints(pointsArray);
+
+    $(window).scroll(function(event) {
+      if ($(window).scrollTop() >= scrollDistance) {
+             animatePoints();
       }
      });
-  }
+  });

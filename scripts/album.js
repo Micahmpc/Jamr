@@ -56,26 +56,24 @@ var albumPicasso = {
       + '</tr>'
       ;
 
-      var $row = $(template) ;
+      var $row = $(template);
 
       var clickHandler = function() {
         var songNumber = $(this).attr('data-song-number');
 
         if (currentlyPlayingSong !== null) {
-          var currenlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
-          currenlyPlayingCell.html(currentlyPlayingSong);
-        }
-
-        if (currentlyPlayingSong !== songNumber) {
-    		// Switch from Play -> Pause button to indicate new song is playing.
-    		$(this).html(pauseButtonTemplate);
-    		currentlyPlayingSong = songNumber;
-
-        } else if (currentlyPlayingSong === songNumber) {
-        // Switch from Pause -> Play button to pause currently playing song.
-        $(this).html(playButtonTemplate);
-        currentlyPlayingSong = null;
-        }
+      		var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
+      		currentlyPlayingCell.html(currentlyPlayingSong);
+      	}
+      	if (currentlyPlayingSong !== songNumber) {
+      		// Switch from Play -> Pause button to indicate new song is playing.
+      		$(this).html(pauseButtonTemplate);
+      		currentlyPlayingSong = songNumber;
+      	} else if (currentlyPlayingSong === songNumber) {
+      		// Switch from Pause -> Play button to pause currently playing song.
+      		$(this).html(playButtonTemplate);
+      		currentlyPlayingSong = null;
+      	}
       };
 
       var onHover = function(event) {
@@ -129,9 +127,10 @@ var albumPicasso = {
  var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
  var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
- // Store state of playing songs
+ // Store state of playing song
 var currentlyPlayingSong = null;
 
 $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
+
 });

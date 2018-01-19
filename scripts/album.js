@@ -7,7 +7,7 @@ var setSong = function(songNumber) {
     currentlyPlayingSongNumber = parseInt(songNumber);
     currentSongFromAlbum = currentAlbum.songs[songNumber -1];
 
-    currentSoundFile = new buzz.sound(currentSongFromAlbum.audioURL, {
+    currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
       formats: ['mp3'],
       preload:true
     });
@@ -87,6 +87,23 @@ var getSongNumbercell = function(number) {
 
       return $row;
 };
+
+
+
+var togglePlayFromPlayerbar = function() {
+    var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
+
+    if (currentSoundFile.isPaused()) {
+          $(this).html(pauseButtonTemplate);
+          $('.main-controls .play-pause').html(playerBarPauseButton);
+          currentSoundFile.play();
+      } else if (currentSoundFile) {
+          $(this).html(playButtonTemplate);
+          $('.main-controls .play-pause').html(playerBarPlayButton);
+          currentSoundFile.pause();
+      }
+};
+
 
     var updatePlayerBarSong = function() {
 
@@ -199,15 +216,14 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var $playPauseButton = $('.main-controls .play-pause');
 
 $(document).ready(function() {
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $playPauseButton.click(togglePlayFromPlayerbar);
 
-    // for (var i = 0; i < songRows.length; i++) {
-    //   songRows[i].addEventListener('click', function(event) {
-    //                clickHandler(event.target);
-    //   });
-    // };
+
+
 });
